@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Button, Form, Row, Col } from 'react-bootstrap';
+import { uuid } from 'uuidv4';
 import './App.css'
 
-const NewTodoForm = () => {
+const NewTodoForm = ({ addTask }) => {
     const INITIAL_DATA = {
         task: "",
         priority: ""
@@ -13,7 +14,7 @@ const NewTodoForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form Submitted');
-        //adding todo logic goes here;
+        addTask({...formData, id:uuid()})
         setFormData(INITIAL_DATA);
     }
 
@@ -39,9 +40,9 @@ const NewTodoForm = () => {
             <Col md="3">
             <Form.Select value={formData.priority} onChange={handleChange} name="priority">
                 <option>Urgency</option>
-                <option id="1" onChange={handleChange}>High</option>
-                <option id="2" onChange={handleChange}>Medium</option>
-                <option id="3" onChange={handleChange}>Low</option>
+                <option id="1" onChange={handleChange}>red</option>
+                <option id="2" onChange={handleChange}>yellow</option>
+                <option id="3" onChange={handleChange}>green</option>
             </Form.Select>
             </Col>
             </Form.Group>
