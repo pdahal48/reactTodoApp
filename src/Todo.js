@@ -24,8 +24,6 @@ const Todo = ({ deleteTodo, id, task, priority }) => {
         setFormData( data => ({...data, [name]: checked}))
     }
 
-    // formData.completed && completeTodo(id);
-
     return (
         <div className="mt-2 justify-content-center">
             <Row>
@@ -40,18 +38,19 @@ const Todo = ({ deleteTodo, id, task, priority }) => {
                     </Form.Group>
                 </Col>
                 {formData.completed ? 
-                    <Col className = "5" style={{backgroundColor: `${priority}`, textDecoration:"line-through"}}> 
+                    <Col 
+                        className = "5"
+                        style={{backgroundColor: `${priority}`,                    
+                        textDecoration:"line-through"}}> 
                         {task}
                     </Col>
                 : 
                     <Col 
-                        className = "5" 
-                        style={{backgroundColor: `${priority}`}}
-                    >
+                        className = "5"
+                        style={{backgroundColor: `${priority}`}}> 
                         {task}
-                    </Col>
+                    </Col>                
                 }
-
                 <Col className="2">
                     <Button onClick={handleDelete} className="btn-sm" style={{backgroundColor: "grey"}}>{trashIcon}</Button> 
                 </Col>
