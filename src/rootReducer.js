@@ -11,11 +11,6 @@ const rootReducer = (state=DEFAULT_STATE, action) => {
                     ...state.tasks, {...action.task}
                 ]
             };
-        case "COMPLETE_TODO":
-            return {
-                ...state,
-                tasks: console.log('task completed')
-            };
 
         case "DELETE_TODO":
             return {

@@ -47,7 +47,7 @@ const NewTodoForm = ({ addTask }) => {
             </Col>
             </Form.Group>
             <Button variant="primary" type="submit">
-                Submit
+                Add to List
             </Button>
             </Form>
         </div>

@@ -17,16 +17,11 @@ function App() {
     dispatch({ type: "DELETE_TODO", id})
   }
 
-  function completeTask(id) {
-    dispatch({ type: "COMPLETE_TODO", id})
-  }
-
   const todoTasks = tasks.map(t => (
     <Todo 
       key={t.id}
       task = {t.task}
       deleteTodo ={() => deleteTask(t.id)}
-      completeTodo = {() => completeTask(t.id)}
       priority = {t.priority}
     />
   ))
